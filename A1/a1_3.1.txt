@@ -1,0 +1,52 @@
+Results for SGDClassifier:
+	Accuracy: 0.3230
+	Recall: [0.1033, 0.6074, 0.4189, 0.1525]
+	Precision: [0.4178, 0.3125, 0.3114, 0.3543]
+	Confusion Matrix: 
+[[ 206  901  732  155]
+ [  91 1233  505  201]
+ [ 112  876  847  187]
+ [  84  936  636  298]]
+
+Results for GaussianNB:
+	Accuracy: 0.3045
+	Recall: [0.1745, 0.5606, 0.3625, 0.1111]
+	Precision: [0.3295, 0.3011, 0.296, 0.3154]
+	Confusion Matrix: 
+[[ 348  930  559  157]
+ [ 210 1138  535  147]
+ [ 248  874  733  167]
+ [ 250  838  649  217]]
+
+Results for RandomForestClassifier:
+	Accuracy: 0.3439
+	Recall: [0.3826, 0.3571, 0.1489, 0.4923]
+	Precision: [0.3481, 0.384, 0.3711, 0.3094]
+	Confusion Matrix: 
+[[763 405 203 623]
+ [459 725 134 712]
+ [526 383 301 812]
+ [444 375 173 962]]
+
+Results for MLPClassifier:
+	Accuracy: 0.3215
+	Recall: [0.7573, 0.0433, 0.1939, 0.2979]
+	Precision: [0.29, 0.3548, 0.398, 0.3728]
+	Confusion Matrix: 
+[[1510   37  198  249]
+ [1343   88  205  394]
+ [1230   64  392  336]
+ [1123   59  190  582]]
+
+Results for AdaBoostClassifier:
+	Accuracy: 0.3695
+	Recall: [0.4152, 0.3281, 0.2651, 0.4739]
+	Precision: [0.376, 0.3886, 0.3669, 0.353]
+	Confusion Matrix: 
+[[828 338 322 506]
+ [444 666 332 588]
+ [515 368 536 603]
+ [415 342 271 926]]
+
+
+The accuracy for every single one of the classifiers are above base line (0.25). 

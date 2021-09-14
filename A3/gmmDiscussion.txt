@@ -1,0 +1,81 @@
+---- Experimental Analysis. 2.4 of the assignment ----
+- Experiment changing M values (# of components)
+M=1, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 0.96875 
+M=2, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 0.9375 
+M=3, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 0.96785 
+M=4, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 0.96785 
+M=5, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 0.96875
+M=6, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=7, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=8, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=9, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=10, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=15, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=20, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=50, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 1.0
+
+- Experiment changing epsilon
+M=8, maxIter=20, eps=10.0, number of speakers=32 - accuracy: 1.0 
+M=8, maxIter=20, eps=1.0, number of speakers=32 - accuracy: 1.0 
+M=8, maxIter=20, eps=0.1, number of speakers=32 - accuracy: 1.0 
+M=8, maxIter=20, eps=0.01, number of speakers=32 - accuracy: 1.0 
+M=8, maxIter=20, eps=0.001, number of speakers=32 - accuracy: 1.0 
+M=8, maxIter=20, eps=0.0001, number of speakers=32 - accuracy: 1.0 
+M=8, maxIter=20, eps=0.00001, number of speakers=32 - accuracy: 1.0 
+M=8, maxIter=20, eps=0.000001, number of speakers=32 - accuracy: 1.0 
+
+- Experiment changing maxIter
+M=8, maxIter=0, eps=0.0, number of speakers=32 - accuracy: 0.28125
+M=8, maxIter=1, eps=0.0, number of speakers=32 - accuracy: 1.0 
+M=8, maxIter=5, eps=0.0, number of speakers=32 - accuracy: 1.0 
+M=8, maxIter=10, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=8, maxIter=15, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=8, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=8, maxIter=25, eps=0.0, number of speakers=32 - accuracy: 1.0
+M=8, maxIter=30, eps=0.0, number of speakers=32 - accuracy: 1.0
+
+- Experiment changing number of speakers 
+M=8, maxIter=20, eps=0.0, number of speakers=8 - accuracy: 1.0 
+M=8, maxIter=20, eps=0.0, number of speakers=12 - accuracy: 1.0 
+M=8, maxIter=20, eps=0.0, number of speakers=16 - accuracy: 1.0
+M=8, maxIter=20, eps=0.0, number of speakers=20 - accuracy: 1.0
+M=8, maxIter=20, eps=0.0, number of speakers=24 - accuracy: 1.0
+M=8, maxIter=20, eps=0.0, number of speakers=28 - accuracy: 1.0
+M=8, maxIter=20, eps=0.0, number of speakers=32 - accuracy: 1.0
+
+
+The accuracy for all kinds of test reached 100% or 90%+. Except being careful of
+number of components, there is not much we can do to improve the performance of 
+the model. The accuracy of the classifier dropped slightly when M < 6.
+
+If you look at the experiments with maxIter, even one iteration of expectation 
+and maximization improved accuracy to 100%. Therefore, there was no point of 
+changing the value of epsilon. Also, the value of improvement ( |l - l_prev| ) 
+were all 100+. This demonstrates that, even with that high difference, the 
+classifier could accurately classify the MFCC data into its own speaker. 
+
+Changing the number of speakers had no affect on accuracy. All were 100%.
+
+---- Answers to the questions. 2.4 of the assignment ----
+
+* First question
+One approach to improve the accuracy is to use validation set for rigorous hyperparameter search.
+Generate a validation set separate from train and test set to find the optimum hyperparameters
+through series of testing on validation set. 
+Another approach, could probably be use neural network to determine the weight of components of GMM. 
+This could also add more complexity thus making the model to perfection with very little error.  
+
+
+* Second question
+The gaussian classifer will never be able to decide whether a given test 
+utterance comes from none of training data. Even if the probability that the 
+data came from trained speaker model is extremely small, argmax will always result in the 
+highest probability of candidates from the trained model. We can set additional
+condition where if it does not pass certain probability, it will be deemed having 
+different origin than the trained models.  
+
+
+* Third question
+In machine learning, the classification problem is usually best solved by
+neural network. Thus, Recurrent Neural Network to train the hidden layers determining
+which speaker the data is from can be used. 

@@ -1,0 +1,47 @@
+*
+Without Attention
+Epoch 1: loss=4.631542690115445, BLEU=0.2172742052682928
+Epoch 2: loss=3.623186833185295, BLEU=0.2465774320573875
+Epoch 3: loss=3.212495417487286, BLEU=0.25788816668022235
+Epoch 4: loss=2.9066581880920004, BLEU=0.264272700890726
+Epoch 5: loss=2.6572470156512793, BLEU=0.2699572362528813
+Finished 5 epochs
+
+With Attention
+Epoch 1: loss=3.1882800793439108, BLEU=0.276711837866153
+Epoch 2: loss=2.1353699621216378, BLEU=0.3041657843022162
+Epoch 3: loss=1.6675646100270478, BLEU=0.31596796198940236
+Epoch 4: loss=1.3363359142206386, BLEU=0.3245141223019426
+Epoch 5: loss=1.0951582593942006, BLEU=0.3246859545289152
+Finished 5 epochs
+
+With multiheaded Attention
+Epoch 1: loss=3.078752452961479, BLEU=0.2888757213485814
+Epoch 2: loss=2.0513276757319803, BLEU=0.31641548670968384
+Epoch 3: loss=1.6333004125303412, BLEU=0.32754590631763136
+Epoch 4: loss=1.3490448063938698, BLEU=0.3331854250143704
+Epoch 5: loss=1.1466433850096867, BLEU=0.3365882584078641
+Finished 5 epochs
+
+
+*
+Without Attention
+The average BLEU score over the test set was 0.30974744262687975
+
+With Attention
+The average BLEU score over the test set was 0.36453155411409205
+
+With multiheaded Attention
+The average BLEU score over the test set was 0.36453155411409205
+
+
+*
+The BLEU scores for the test set are higher than the training set. This is a discrepancy between the training and the test set. The training sets are supposed to be higher than the test set. This could purely due to chance. The size of test set is usually small. Thus, it could be that the words in the sentences occur in the references by pure luck. If the test set was large, the bleu score must be reasonable due to existence of various words that comes from its sheer number. It could be that the kinds of data that has been overfitted to the training model have been presented as our test set by pure chance.
+
+It is reasonable that the performance from the model with attention did better than the one without attention. With attention, the model can incorporate overall context of sentences, not just prior 4-grams, thus have better results. This was expected.
+
+However, the multiheaded attention was doing better in the first three epoch than just single-headed attention. This could be due to floating point error. The multiheaded attention requires much more computation than the single-headed attention, making the model prone to floating point error. However, looking at the first three epoch, the multiheaded attention had much faster decrease in loss and increase in BLEU scores than the single-headed attention. Also, the multiheaded attention have lower loss and higher BLEU score. This shows multiheaded attention is the better model than the single-headed attention model. 
+
+The multiheaded attention is the better model because it freshly starts training for certain dimensions of h. This allows more careful computation of training using neural network.
+
+

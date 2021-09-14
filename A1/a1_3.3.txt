@@ -1,0 +1,27 @@
+5 p-values: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0949, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.722, 0.0, 0.5343, 0.3672, 0.0, 0.1003, 0.0, 0.0187, 0.0501, 0.284, 0.0, 0.0, 0.0022, 0.0033, 0.0, 0.0957, 0.8616, 0.0, 0.2099, 0.0013, 0.0127, 0.1065, 0.0, 0.7781, 0.0, 0.0, 0.0, 0.3182, 0.0, 0.0059, 0.0, 0.3239, 0.8944, 0.0002, 0.9703, 0.8488, 0.0, 0.0003, 0.0008, 0.0, 0.0043, 0.7614, 0.4798, 0.0, 0.0, 0.143, 0.0, 0.8487, 0.0003, 0.0373, 0.0, 0.0, 0.0, 0.0014, 0.0741, 0.0, 0.4711, 0.0, 0.0, 0.0001, 0.0, 0.0104, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0592, 0.0279, 0.6665, 0.0, 0.1675, 0.0, 0.1373, 0.0407, 0.0517, 0.0, 0.0, 0.0119, 0.0, 0.3965, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0003, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0639, 0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.0, 0.0, 0.0015, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0197, 0.0055, 0.0, 0.0, 0.0, 0.0, 0.0001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2213, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+50 p-values: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0949, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.722, 0.0, 0.5343, 0.3672, 0.0, 0.1003, 0.0, 0.0187, 0.0501, 0.284, 0.0, 0.0, 0.0022, 0.0033, 0.0, 0.0957, 0.8616, 0.0, 0.2099, 0.0013, 0.0127, 0.1065, 0.0, 0.7781, 0.0, 0.0, 0.0, 0.3182, 0.0, 0.0059, 0.0, 0.3239, 0.8944, 0.0002, 0.9703, 0.8488, 0.0, 0.0003, 0.0008, 0.0, 0.0043, 0.7614, 0.4798, 0.0, 0.0, 0.143, 0.0, 0.8487, 0.0003, 0.0373, 0.0, 0.0, 0.0, 0.0014, 0.0741, 0.0, 0.4711, 0.0, 0.0, 0.0001, 0.0, 0.0104, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0592, 0.0279, 0.6665, 0.0, 0.1675, 0.0, 0.1373, 0.0407, 0.0517, 0.0, 0.0, 0.0119, 0.0, 0.3965, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0003, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0639, 0.0, 0.0, 0.0, 0.0, 0.0, 0.001, 0.0, 0.0, 0.0015, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0197, 0.0055, 0.0, 0.0, 0.0, 0.0, 0.0001, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2213, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Accuracy for 1k: 0.2689
+Accuracy for full dataset: 0.3205
+Chosen feature intersection: (array([ 83, 153]), array([1, 3]), array([0, 3]))
+Top-5 at higher: [ 83  96 119 153 171]
+
+
+(a) 
+83 -> 54 = liwc_money. 
+96 -> 67 = liwc_quant. 
+
+There is not much intersection in features for top 5 between 1K and 32K data set. This might explain the low accuracy results shown previously. The data is not consistent at all. 
+The above features are related to money (83) and its quantity (96). How money will be distributed within the society is really important aspect in determining political orientation of a person. Left would want to distribute money more within the society. Right would desire hierarchal nature of distribution of money. For receptiviti_melancholy, this shows emotional asepct of writer. Depending on the which political party is in reign, it may differ from respective individuals with different political orientation.
+
+(b)
+p-values are lower with more data. More data is better representation of real world scenarios. Thus, must be lower.
+However, with more k features, It is not as significant as shown above. The p-values for both k=1, k=5 features are the same. Only several features siginifcantly contributes in predicting the data. 
+
+(c)
+83 -> 54 = liwc_money. 
+153 -> 124 = receptiviti_melancholy.
+119 -> 90 = receptiviti_agreeableness. 
+153 -> 124 = receptiviti_melancholy.
+171 -> 142 =  receptiviti_type_a.
+Money is always important aspect in determining a person's political orientation. The left and right differs significantly in high money should be distributed. The features - receptiviti_agreeableness, receptiviti_melancholy, and receptiviti_type_a - represent emotional reflection of a writing. This may be a huge factor in determining a person's political orientation depnding on which political party is in regime.
+

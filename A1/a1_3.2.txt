@@ -1,0 +1,10 @@
+1000: 0.3239
+5000: 0.3586
+10000: 0.3666
+15000: 0.3598
+20000: 0.3671
+
+
+There is general increase in accuracy with sample size. This was expected.
+With more data, you will gather more knowledge associated with specific political orientation. For example, if one was to predict for the "Right" of the political spectrum, It would be better to have larger amount of words associated with "Right" then fewer.  
+As one can see, there is not much improvement from 10k to 20k. In fact, there is a decrease in accuracy from 10k to 15K. Therefore, affect of having more data in making a prediction plateaus after certain point.
